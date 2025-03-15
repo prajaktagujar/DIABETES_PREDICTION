@@ -36,16 +36,7 @@ def predict():
                 return jsonify({"error": f"Missing feature: {feature}"}), 400
 
         # Convert to numpy array and reshape
-        input_data = np.array([[
-            float(data["pregnancies"]),
-            float(data["glucose"]),
-            float(data["bloodPressure"]),
-            float(data["skinThickness"]),
-            float(data["insulin"]),
-            float(data["bmi"]),
-            float(data["dpf"]),
-            float(data["age"]),
-        ]])
+        input_data = np.array([[float(data[feature]) for feature in required_features]])
 
         # Scale the input data
         input_data_scaled = scaler.transform(input_data)
@@ -60,9 +51,7 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 
+# Ensure correct indentation for app startup
 if __name__ == "__main__":
-import os
-
-port = int(os.environ.get("PORT", 5000))  # Get Railway-assigned port
-app.run(host="0.0.0.0", port=port, debug=True)
-
+    port = int(os.environ.get("PORT", 5000))  # Get Railway-assigned port
+    app.run(host="0.0.0.0", port=port, debug=True)
