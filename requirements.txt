@@ -19,7 +19,7 @@ mysql-connector-python==9.1.0
 numpy==2.2.3
 pandas==2.2.3
 platformdirs==4.3.6
-pypiwin32==223
+
 python-dateutil==2.9.0.post0
 pyttsx3==2.98
 pytz==2025.1
