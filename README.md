@@ -23,4 +23,6 @@ Backend: Flask (Python)
 
 Machine Learning: Scikit-learn, Pandas, NumPy
 
-Deployment Options: Render
+Deployment Options: Railway
+
+Here is the link of the website through which you can access the project:- https://web-production-49324.up.railway.app/
